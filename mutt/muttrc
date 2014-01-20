@@ -51,7 +51,7 @@ set to_chars=" +TCF "                     # Drop the "L".
 unset collapse_unread                     # don't collapse threads with unread mails
 
 set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s" # Specify the index format.
-
+set status_format = "───[ Folder: %f ]─%V──[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?─── %l|%L"
 
 set header_cache=~/.mutt/cache            # set header cache file
 unset metoo                               # remove my $alternates from the reply list
