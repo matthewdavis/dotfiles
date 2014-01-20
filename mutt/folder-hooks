@@ -1,0 +1,7 @@
+# set up trash
+folder-hook .                                  'macro index d "<save-message>=INBOX/OldStuff/INBOX-archive/2014<enter>"'
+folder-hook .                                  'exec collapse-all'
+folder-hook =INBOX/OldStuff/INBOX-archive/2014 'macro index d <delete-message>'
+
+# this coupled with 'unset collapse_unread' will ensure all unread threads are collapsed
+folder-hook .                                  'exec collapse-all'

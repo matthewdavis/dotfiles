@@ -1,0 +1,78 @@
+# -*- muttrc -*-
+#
+# rc file for mutt
+#
+
+source ~/.mutt/redhat_login                    # login cred & server info
+
+set alias_file=~/.mutt/aliases            # Keep aliases in this file.
+set postpone=ask-no                       # Ask about postponing.
+set postponed=+postponed                  # Where postponed messages live.
+set nomove                                # Hold messages in $MAIL.
+set print=ask-yes                         # Ask before printing.
+set delete=ask-yes                        # Ask before doing a delete.
+set include                               # Include the message in replies.
+set sort_aux=last-date-received           # Sort threads by date received.
+set charset=iso-8859-1                    # One of those days in England...
+set noallow_8bit                          # 8bit isn't safe via Demon.
+                                          # Attribution line.
+set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
+set edit_headers                          # I want to edit the message headers.
+                                          # Use vi with the signatures stripped
+set editor="$HOME/.mutt/killsig %s ; vim '+:8' '+:set textwidth=80' '+:set spell' %s"
+set query_command="~/.mutt/mutt_ldap_query '%s'"
+set sort=threads                          # Auto sort by threads
+set nomark_old                            # Don't mark unread new msgs as old.
+set copy                                  # Keep copies of outgoing mail...
+set record=+Sent                          # ... and it gets saved in =outbox.
+set nobeep                                # We don't need no beeping software.
+set smart_wrap                            # Want the dispaly lines to wrap
+set nomarkers                             # Don't want any wrap markers.
+set mime_forward                          # Forward message as MIME attachments.
+set pager_context=3                       # Display 3 lines of context in pager.
+set pager_index_lines=6                   # number of lines of a mini-index
+set nostrict_threads                      # Lets have some fuzzy threading.
+set sendmail_wait=-1                      # Don't wait around for sendmail.
+set fcc_clear                             # Keep fcc's clear of signatues and encryption.
+set fast_reply                            # Don't prompt for recipients or subject when replying
+set nopipe_decode                         # Don't decode messages when piping.
+					  # Print via a2ps
+set print_command="a2ps -1gEmail --borders=no --strip=3" 
+set tilde                                 # Fill out messages with '~'.
+set read_inc=100                          # Read counter ticks every 100 msgs.
+set write_inc=100                         # Write counter ticks every 100 msgs.
+set noconfirmappend                       # Just append, don't hassle me.
+set pager_stop                            # Don't skip msgs on next page.
+                                          # Where to find the mailcap.
+set mailcap_path=~/.mutt/mailcap:/usr/local/etc/mailcap:/etc/mailcap
+                                          # What we consider to be a quote.
+set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set to_chars=" +TCF "                     # Drop the "L".
+unset collapse_unread                     # don't collapse threads with unread mails
+
+set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s" # Specify the index format.
+
+
+set header_cache=~/.mutt/cache            # set header cache file
+unset metoo                               # remove my $alternates from the reply list
+
+source ~/.mutt/auto_views                 # Define auto_views.
+source ~/.mutt/aliases                    # Load in my aliases.
+source ~/.mutt/subscriptions              # Define the list of subscribed mailing lists.
+source ~/.mutt/mailboxes                  # Define the list of folders that receive mail.
+source ~/.mutt/headers                    # Configure header display.
+source ~/.mutt/folder-hooks               # Define folder-hooks.
+source ~/.mutt/save-hooks                 # Define save-hooks.
+source ~/.mutt/fcc-hooks                  # Define fcc-hooks.
+source ~/.mutt/message-hooks              # Define message hooks.
+source ~/.mutt/bindings                   # Define key bindings.
+source ~/.mutt/macros                     # Define macros.
+source ~/.mutt/colours                    # Define colours.
+#source ~/.mutt/scoring                    # Define scores
+source ~/.mutt/non-standard               # Support for mutt patches.
+
+# HTML is the last option.
+alternative_order text/enriched text/plain text/html 
+
+# Last, but not least, get mutt to display its version on startup.
+push <show-version>

@@ -1,0 +1,46 @@
+# -*- muttrc -*-
+#
+# Colour settings for mutt.
+#
+
+
+# Colour settings
+color normal default default
+# Basics:
+color indicator brightred default
+color status brightyellow black
+color tree red default
+color signature brightblack default
+# Headers:
+color header brightblue default ^To:
+color header brightblue default ^Cc:
+color header brightblue default ^Subject:
+color header brightblue default ^From:
+color header brightblue default ^Date:
+# Quotes:
+color quoted red default
+color quoted1 green default
+color quoted2 blue default
+color quoted3 yellow default
+# Attribution:
+color body yellow default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:"
+color body yellow default "(^|[^[:alnum:]])on [a-z0-9 ,]+([a-z0-9:,. <>@+-]+)? wrote:"
+# URLs:
+#color body magenta default (insert huge regular expression match here)
+# Mailtos:
+#color body cyan default (insert huge regular expression match here)
+# Border lines.
+color body cyan default "( *[-+=#*~_]){6,}"
+# Smileys:
+color body brightyellow default " [;:]-[)/(|pPD]"
+color body brightyellow default " [;:][)/(|pPD]"
+color body brightyellow default " [-^]_[-^]"
+# Indexing:
+color index green default ~N
+color index red default ~D
+color index magenta default ~T
+color index yellow default ~P
+# Attachments:
+color attachment white default
+# X-label
+color header brightwhite default '^X-Label:'
