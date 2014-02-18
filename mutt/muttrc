@@ -13,7 +13,7 @@ set print=ask-yes                         # Ask before printing.
 set delete=ask-yes                        # Ask before doing a delete.
 set include                               # Include the message in replies.
 set sort_aux=last-date-received           # Sort threads by date received.
-set charset=iso-8859-1                    # One of those days in England...
+set charset=utf-8                         # This seems to work best for me
 set noallow_8bit                          # 8bit isn't safe via Demon.
                                           # Attribution line.
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
@@ -28,7 +28,7 @@ set record=+Sent                          # ... and it gets saved in =outbox.
 set nobeep                                # We don't need no beeping software.
 set smart_wrap                            # Want the dispaly lines to wrap
 set nomarkers                             # Don't want any wrap markers.
-set mime_forward                          # Forward message as MIME attachments.
+unset mime_forward                        # Don't forward message as MIME attachments.
 set pager_context=3                       # Display 3 lines of context in pager.
 set pager_index_lines=6                   # number of lines of a mini-index
 set nostrict_threads                      # Lets have some fuzzy threading.
