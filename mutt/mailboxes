@@ -23,6 +23,7 @@ mailboxes =INBOX/low/sme-sysmgt
 mailboxes =INBOX/low/ne-out-sales
 mailboxes =INBOX/low/partner-tech
 mailboxes =INBOX/low/puppet
+mailboxes =INBOX/lists/rhev-tech
 mailboxes =INBOX/low/rhel7-plan
 mailboxes =INBOX/low/sa-canada
 mailboxes =INBOX/low/misc-lists

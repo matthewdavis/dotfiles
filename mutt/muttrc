@@ -3,7 +3,22 @@
 # rc file for mutt
 #
 
-source ~/.mutt/redhat_login                    # login cred & server info
+source ~/.mutt/redhat_login               # login creds & server info
+#source ~/.mutt/offlineimap                # OfflineIMAP settings
+source ~/.mutt/auto_views                 # Define auto_views.
+source ~/.mutt/aliases                    # Load in my aliases.
+source ~/.mutt/subscriptions              # Define the list of subscribed mailing lists.
+source ~/.mutt/mailboxes                  # Define the list of folders that receive mail.
+source ~/.mutt/headers                    # Configure header display.
+source ~/.mutt/folder-hooks               # Define folder-hooks.
+source ~/.mutt/save-hooks                 # Define save-hooks.
+source ~/.mutt/fcc-hooks                  # Define fcc-hooks.
+source ~/.mutt/message-hooks              # Define message hooks.
+source ~/.mutt/bindings                   # Define key bindings.
+source ~/.mutt/macros                     # Define macros.
+source ~/.mutt/colours                    # Define colours.
+#source ~/.mutt/scoring                    # Define scores
+source ~/.mutt/non-standard               # Support for mutt patches.
 
 set alias_file=~/.mutt/aliases            # Keep aliases in this file.
 set postpone=ask-no                       # Ask about postponing.
@@ -55,21 +70,6 @@ set status_format = "───[ Folder: %f ]─%V──[%r%m messages%?n? (%n ne
 
 set header_cache=~/.mutt/cache            # set header cache file
 unset metoo                               # remove my $alternates from the reply list
-
-source ~/.mutt/auto_views                 # Define auto_views.
-source ~/.mutt/aliases                    # Load in my aliases.
-source ~/.mutt/subscriptions              # Define the list of subscribed mailing lists.
-source ~/.mutt/mailboxes                  # Define the list of folders that receive mail.
-source ~/.mutt/headers                    # Configure header display.
-source ~/.mutt/folder-hooks               # Define folder-hooks.
-source ~/.mutt/save-hooks                 # Define save-hooks.
-source ~/.mutt/fcc-hooks                  # Define fcc-hooks.
-source ~/.mutt/message-hooks              # Define message hooks.
-source ~/.mutt/bindings                   # Define key bindings.
-source ~/.mutt/macros                     # Define macros.
-source ~/.mutt/colours                    # Define colours.
-#source ~/.mutt/scoring                    # Define scores
-source ~/.mutt/non-standard               # Support for mutt patches.
 
 # HTML is the last option.
 alternative_order text/enriched text/plain text/html 
