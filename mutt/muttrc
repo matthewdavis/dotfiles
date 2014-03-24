@@ -34,7 +34,7 @@ set noallow_8bit                          # 8bit isn't safe via Demon.
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
 set edit_headers                          # I want to edit the message headers.
                                           # Use vi with the signatures stripped
-set editor="$HOME/.mutt/killsig %s ; vim '+:8' '+:set textwidth=80' '+:set spell' %s"
+set editor="$HOME/.mutt/killsig %s ; vim '+:9' '+:set textwidth=80' '+:set spell' %s"
 set query_command="~/.mutt/mutt_ldap_query '%s'"
 set sort=threads                          # Auto sort by threads
 set nomark_old                            # Don't mark unread new msgs as old.

@@ -8,4 +8,5 @@ folder-hook =INBOX/OldStuff/INBOX-archive/2014 'macro index d <delete-message>'
 folder-hook .                                  'exec collapse-all'
 
 # delete messages older than 4 weeks in any folder under /low
-folder-hook =INBOX/low                         'push <delete-pattern>~r>4w!~F<enter>'
+#folder-hook =INBOX/low/*                       'push <delete-pattern>~d>4w!~F<enter>'
+folder-hook =INBOX/low                         'push <delete-pattern>~d>4w<enter>'
