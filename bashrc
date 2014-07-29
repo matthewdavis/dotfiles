@@ -14,7 +14,8 @@ alias less='less -FiX'
 alias head='head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 alias fix_elluminate='javaws -Xclearcache'
 
-alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
+#alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
+alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
 alias kemp='ssh matthewdavis@172.31.1.2'
 
 qr() {
