@@ -16,7 +16,7 @@ alias fix_elluminate='javaws -Xclearcache'
 
 #alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
 alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
-alias kemp='ssh matthewdavis@172.31.1.2'
+alias centis='ssh root@172.31.11'
 
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
