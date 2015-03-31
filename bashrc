@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+source ~/.todo/todo_completion
+alias t='todo.sh'
+
 # User specific aliases and functions
 
 
@@ -16,7 +19,7 @@ alias fix_elluminate='javaws -Xclearcache'
 
 #alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
 alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
-alias centos='ssh root@172.31.11'
+alias centos='ssh root@172.31.1.11'
 
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
