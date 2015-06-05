@@ -1,0 +1,21 @@
+
+# sets the location for your spool mailbox - the INBOX setting should work on most imap servers
+set spoolfile=imaps://server/INBOX
+set imap_authenticators="gssapi:login"
+set use_envelope_from=yes
+
+# send to remote smtp server instead of local
+set smtp_url="smtp://server"
+set smtp_authenticators=gssapi
+
+# Specifies  the  default  location  of your mailboxes.
+set folder="imaps://server"
+
+#  Your login name on the IMAP server. 
+# Put in a value here to avoid typing in your username each time you start mutt
+set imap_user=user
+
+# Specifies the password for your IMAP account.  
+# Warning: you should only use this option when you are on a fairly secure machine
+#set imap_pass=""
+unset imap_pass

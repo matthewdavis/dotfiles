@@ -1,0 +1,80 @@
+# $Id$
+#
+# Description: Mutt scoring
+# See: http://www.mutt.org/doc/devel/manual.html#score-command
+#
+# Copyright (C) 2003,2004,2005,2006 Charles Mauch <cmauch@gmail.com>
+#
+# Verbatim copying and distribution of this entire file is permitted in any      
+# medium without royalty provided this header is preserved.
+
+# -[ LETS SET THE STANDARD SCORE AT 5 ]----------------------------------------
+
+unscore         *
+score           ~A      +5
+
+# -[ DIFFERENT COLOURS FOR DIFFERENT SCORES ]----------------------------------
+
+color index     green   default         "~n 0-3"                        # low scores get puked on
+color index     red     default         "~n 7-"                         # show important e-mails
+color index     cyan    default         "~f .*amd@redhat.com"           # me
+
+folder-hook     lists   set             sort_aux=score                  # Sort by score in lists
+
+# -[ MESSAGES SCORING 3 OR LESS GET AUTOMATICALLY READ. ]---------------------
+
+set   score_threshold_read=3
+
+# -[ AND MESSAGES SCORING ZERO OR LESS ARE TAGGED FOR NUKAGE ]----------------
+
+set   score_threshold_delete=-5                  # Score totals negative? gone!
+
+# -[ SCORE ANY EMAILS WHO WHICH WE HAVE REPLIED UP A BIT ]--------------------
+
+score ~Q                                +2      # I replied to it, so it's important
+
+# -[ SCORE OUT OF OFFICE REPLIES ]--------------------------------------------
+
+score '~s "is out of the office\."'     -4      # Okay, lame
+score '~s "re.*is out of the office\."' +4      # My reply to their reply!
+
+# -[ SCORE ANYONE IN ALIAS FILE ]---------------------------------------------
+
+#score "~f '(`awk -F'[<>]' '{ printf ("|%s", $2) }' ~/.mutt/aliases | cut -c2-`)' " +3
+
+# -[ PEOPLE AT THESE DOMAINS GENERALLY ARE INTERESTING ]----------------------
+
+score "~f '@eff\.org'"                  +2
+score "~f '@fsf\.org'"                  +2
+score "~f '@epic\.org'"                 +2
+score "~f '@taclug\.org'"               +1
+score "~f '@debian\.org'"               +1
+score "~f '@ubuntu\.com'"               +1
+score "~f '@canonical\.com'"            +1
+
+# -[ PEOPLE WHO WE KNOW ARE ALWAYS FASCINATING ]------------------------------
+
+score "~f 'mike@osdn\.org\.ua'"         +2      # Cool dude
+
+# -[ LAMERS WHO ANNOY US BADLY! ]---------------------------------------------
+
+score "~f 'frcaen@gmail\.com'"          -5      # Franois Caen, always negative
+score "~f 'chuckw@quantumlinux\.com'"   -2      # Chuck Wolber, negative
+score "~f 'scott@surrealistic\.org'"    -4      # Scott Hunter, negative
+score "~f 'ken@hughesfamily\.com'"      -6      # Ken Hughes, negative
+
+# -[ SUBJECTS THAT MIGHT BE INTERESTING ]-------------------------------------
+
+score '~s " vi[ m$]"'                   +2      # Vim Rocks!
+score '~s "mutt"'                       +2      # So does mutt
+score '~s "FOSS|Free\ Software|GNU"'    +2      # We like GNU
+
+# -[ SUBJECTS I'M NOT INTERESTED IN ]-----------------------------------------
+
+score '~s "wireless|wlan|802.11|wifi"'  -2      # Too much wifi nonsense.
+score '~s "plone|zope"'                 -2      # Great, more python
+score '~s "OS\/X|Mac"'                  -2      # I've heard enough, use linux
+score '~s "Microsoft|Windows|windows"'  -2      # Just switch allready!
+score '~s "OT|Off Topic|off topic"'     -2      # DOH!
+score '~s "not working"'                -2      # What a lame request for help
+
