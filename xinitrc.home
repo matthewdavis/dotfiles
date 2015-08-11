@@ -1,0 +1,2 @@
+#!/bin/bash
+xinput --set-prop 'pointer:La-VIEW Technology SteelSeries  ' 'Device Accel Constant Deceleration' 2

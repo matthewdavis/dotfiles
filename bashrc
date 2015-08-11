@@ -11,6 +11,7 @@ alias t='todo.sh'
 # User specific aliases and functions
 
 
+export TERM=xterm-256color
 export GREP_COLOR="1;33"
 alias grep='grep --color=auto'
 alias less='less -FiX'
