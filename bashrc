@@ -18,7 +18,8 @@ alias head='head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 alias fix_elluminate='javaws -Xclearcache'
 
 #alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
-alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
+#alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
+alias irc='ssh log.rdu.salab.redhat.com -p 19122 -l matt'
 alias centos='ssh root@172.31.1.11'
 
 qr() {
