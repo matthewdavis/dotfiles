@@ -5,8 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-source ~/.todo/todo_completion
-alias t='todo.sh'
+#source ~/.todo/todo_completion
+#alias t='todo.sh'
 
 # User specific aliases and functions
 
