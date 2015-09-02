@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:/home/mdavis/keepass/usr/local/bin
+PATH=$PATH:$HOME/bin:/home/mdavis/keepass/usr/local/bin:$HOME/.todo
 
 export PATH
 export HISTFILESIZE=10000
