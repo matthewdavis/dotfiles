@@ -1,6 +1,6 @@
 [user]
-  name = Matthew Davis
-  email = amd@redhat.com
+	name = Matthew Davis
+	email = mdavis@redhat.com
 [push]
   default = simple
 
