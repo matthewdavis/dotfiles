@@ -19,7 +19,7 @@ own_window_hints below
 double_buffer yes
 
 # fiddle with window
-use_spacer yes
+use_spacer true
 use_xft no
 
 # Update interval in seconds
@@ -35,26 +35,27 @@ maximum_width 320
 draw_shades no
 
 # Text stuff
-draw_outline no # amplifies text if yes
-draw_borders no
-font arial
+draw_outline yes # amplifies text if yes
+draw_borders yes
+#font arial
 uppercase no # set to yes if you want all text to be in uppercase
 
 # Stippled borders?
-stippled_borders 3
+#stippled_borders 5
 
 # border margins
-border_margin 5
+#border_margin 5
 
 # border width
-border_width 6
+border_width 3
 
 # Default colors and also border colors, grey90 == #e5e5e5
 default_color FFFFCC
 
 own_window_colour brown
 own_window_transparent yes
-
+own_window_argb_visual true
+own_window_argb_value 80
 # Text alignment, other possible values are commented
 #alignment top_left
 alignment top_right
@@ -65,6 +66,19 @@ alignment top_right
 gap_x 10
 gap_y 10
 
+own_window yes
+own_window_type normal
+own_window_transparent no
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 153
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+
+use_xft yes
+xftalpha 0.9
+xftfont freemono
+
 # stuff after ‘TEXT’ will be formatted on screen
 
 TEXT
@@ -73,18 +87,19 @@ ${color CC9900}SYSTEM ${hr 2}$color
 $nodename $sysname $kernel on $machine
 
 ${color CC9900}CPU ${hr 2}$color
-Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz
+#Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz
+Intel(R) Core(TM) i7-3740QM CPU @ 2.70GHz
 
 Total CPU: ${cpu cpu0}%
 ${color 597DB2}${cpubar}$color
 ${cpugraph 000000 597DB2}
-Core 1: ${freq 1} MHz        Temprature: $color ${exec sensors|grep 'Core0'|awk '{print $3}'}
+Core 1: ${freq 1} MHz        Temprature: $color ${exec sensors|grep 'Core 0'|awk '{print $3}'}
 ${cpu cpu1}% ${color 597DB2}${cpubar cpu1}$color
-Core 2: ${freq 2} MHz        Temprature: $color ${exec sensors|grep 'Core1'|awk '{print $3}'}
+Core 2: ${freq 2} MHz        Temprature: $color ${exec sensors|grep 'Core 1'|awk '{print $3}'}
 ${cpu cpu2}% ${color 597DB2}${cpubar cpu2}$color
-Core 3: ${freq 3} MHz        Temprature: $color ${exec sensors|grep 'Core2'|awk '{print $3}'}
+Core 3: ${freq 3} MHz        Temprature: $color ${exec sensors|grep 'Core 2'|awk '{print $3}'}
 ${cpu cpu3}% ${color 597DB2}${cpubar cpu3}$color
-Core 4: ${freq 4} MHz        Temprature: $color ${exec sensors|grep 'Core3'|awk '{print $3}'}
+Core 4: ${freq 4} MHz        Temprature: $color ${exec sensors|grep 'Core 3'|awk '{print $3}'}
 ${cpu cpu4}% ${color 597DB2}${cpubar cpu4}$color
 
 NAME            PID	 CPU%  	MEM%
@@ -99,16 +114,20 @@ RAM Used: ${mem}	RAM Free: ${memfree}/ ${memmax}
 Swap: $swapperc%   ${color FF6600} ${swapbar 6}$color
 
 ${color CC9900}DISK ${hr 2}$color
-sdc5 ${fs_type} (Root): ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
-sdc1 NTFS (Data): ${fs_free_perc /media/data}% ${color FFFF33} ${fs_bar 6 /media/data}$color
+/home : ${fs_free_perc /home}% ${color FFFF33} ${fs_bar 6 /home}$color
+/     : ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
 
-${color CC9900}NETWORK (${addr eth1}) ${hr 2}$color
-Down: $color${downspeed eth1} k/s ${alignr}Up: ${upspeed eth1} k/s
-${downspeedgraph eth1 25,140 000000 ff0000} ${alignr}${upspeedgraph eth1
+${color CC9900}NETWORK (${addr enp0s25}) ${hr 2}$color
+Down: $color${downspeed enp0s25} k/s ${alignr}Up: ${upspeed enp0s25} k/s
+${downspeedgraph enp0s25 25,140 000000 ff0000} ${alignr}${upspeedgraph enp0s25
 25,140 000000 00ff00}$color
-Total: ${totaldown eth1} ${alignr}Total: ${totalup eth1}
+Total: ${totaldown enp0s25} ${alignr}Total: ${totalup enp0s25}
 Inbound: ${tcp_portmon 1 32767 count} Outbound: ${tcp_portmon 32768
 61000 count}${alignr}Total: ${tcp_portmon 1 65535 count}
 
-${color CC9900}LOGGING ${hr 2}$color
-${color 339900}${execi 30 tail -n3 /var/log/messages | fold -w50}$color
+#${color CC9900}TODO ${hr 2}$color
+#${color 339900}${execi 30 ~/.todo/todo.sh ls}$color
+
+#${color CC9900}TEST ${hr 2}$color
+#${color 339900}${image ~/Downloads/Ann_Arbor.gif}$color
+
