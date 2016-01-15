@@ -27,6 +27,8 @@ alias centos='ssh root@172.31.1.11'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
+alias mutt='TERM=screen-256color mutt'
+
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
 }
@@ -38,5 +40,6 @@ mkmod() {
 
 
 #export PROMPT_COMMAND='PS1="\[\033[0;33m\]\!\[\033[1;30m\]|\[\033[1;34m\]\$(date +%H:%M)\[\033[1;30m\]|\`if [[ $? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`\u.\h\[\033[1;30m\]:\[\033[1;37m\]\`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\` \`if [[ "`id -u`" = "0" ]]; then echo "\\[\\033[31m\\]"; else echo "\\[\\033[32m\\]"; fi\`\\$\[\033[0;0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+export PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
 
 export EDITOR="vim"
