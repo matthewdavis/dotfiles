@@ -140,9 +140,15 @@ set charset=utf-8
 # Use vi with the signatures stripped
 set editor="$HOME/.mutt/killsig %s ; vim '+:9' '+:set textwidth=80' '+:set spell' %s"
 
+###### H
+# set header cache file
+set header_cache=~/.mutt/cache/headers
+
 ###### M
 # Where to find the mailcap.
 set mailcap_path=~/.mutt/mailcap:/usr/local/etc/mailcap:/etc/mailcap
+# set message cache file
+set message_cachedir =~/.mutt/cache/bodies
 
 ###### P
 # Display 3 lines of context in pager.
@@ -180,8 +186,6 @@ set to_chars=" +TCF "
 # Write counter ticks every 100 msgs.
 set write_inc=100
 
-set header_cache=~/.mutt/cache/headers    # set header cache file
-set message_cachedir =~/.mutt/cache/bodies# set message cache file
 
 
 # Last, but not least, get mutt to display its version on startup.
