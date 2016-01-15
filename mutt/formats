@@ -1,0 +1,142 @@
+# -*- muttrc -*-
+#
+
+## ======================================================================
+## Format Strings:
+## "hdr_format", "pager_format", and "status_format".
+## ======================================================================
+
+
+# index_format - format of all mails shown in the index display
+#  %a      address of the author
+#  %b      filename of the original message folder (think mailBox)
+#  %B      the list to which the letter was sent, or else the folder name (%b).
+#  %c      number of characters (bytes) in the message
+#  %C      current message number
+#  %d      date and time of the message in the format specified by
+#          ``date_format'' converted to sender's time zone
+#  %D      date and time of the message in the format specified by
+#          ``date_format'' converted to the local time zone
+#  %f      entire From: line (address + real name)
+#  %F      author name, or recipient name if the message is from you
+#  %i      message-id of the current message
+#  %l      number of lines in the message
+#  %L      list-from function
+#  %m      total number of message in the mailbox
+#  %M      number of hidden messages if the thread is collapsed.
+#  %N      message score
+#  %n      author's real name (or address if missing)
+#  %O       (_O_riginal save folder)  Where mutt would formerly have stashed the
+#          message: list name or recipient name if no list
+#  %s      subject of the message
+#  %S      status of the message (N/D/d/!/*/r)
+#  %t      `to:' field (recipients)
+#  %T      the appropriate character from the $to_chars string
+#  %u      user (login) name of the author
+#  %v      first name of the author, or the recipient if the message is from you
+#  %Z      message status flags
+#  %{fmt}  the date and time of the message is converted to sender's
+#          time zone, and ``fmt'' is expanded by the system call
+#          ``strftime''; a leading bang disables locales
+#  %[fmt]  the date and time of the message is converted to the local
+#          time zone, and ``fmt'' is expanded by the system call
+#          ``strftime''; a leading bang disables locales
+#  %(fmt)  the local date and time when the message was received.
+#          ``fmt'' is expanded by the system call ``strftime'';
+#          a leading bang disables locales
+#  %<fmt>  the current local time. ``fmt'' is expanded by the system
+#          call ``strftime''; a leading bang disables locales.
+#  %>X     right justify the rest of the string and pad with character "X"
+#  %|X     pad to the end of the line with character "X"
+
+set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s"
+
+
+
+# pager_format - format of summary on current mail in the pager
+# Examples:
+#set pager_format="%S %C/%T: %-20.20n   %s"  # default
+#set  pager_format="%S [%C] %n (%l) %s"      # Tom's favourite
+
+
+## Default: "%N %F %2l %-8.8u %-8.8g %8s %d %f"
+#  This variable allows you to customize the file browser display to your
+#  personal taste.  This string is similar to ``$index_format'', but has
+#  its own set of printf()-like sequences:
+#       %d      date/time folder was last modified
+#       %f      filename
+#       %F      file permissions
+#       %g      group name (or numeric gid, if missing)
+#       %l      number of hard links
+#       %N      N if folder has new mail, blank otherwise
+#       %s      size in bytes
+#       %u      owner name (or numeric uid, if missing)
+#       %>X     right justify the rest of the string and pad with character "X"
+#       %|X     pad to the end of the line with character "X"
+set folder_format="%F %2l %-8.8u %-8.8g %d %8s %N %f"
+
+
+# status_format
+#  Default: "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b? %?l? %l?]---(%s/%S)-%>-(%P)---"
+#  Controls the format of the status line displayed in the index menu.
+#  This string is similar to ``$index_format'', but has its own set of
+#  printf()-like sequences:
+#       %b      number of mailboxes with new mail *
+#       %d      number of deleted messages *
+#       %h      local hostname
+#       %f      the full pathname of the current mailbox
+#       %F      number of flagged messages *
+#       %l      size (in bytes) of the current mailbox *
+#       %L      size (in bytes) of the messages shown (i.e., which match the current limit) *
+#       %m      the number of messages in the mailbox *
+#       %M      the number of messages shown (i.e., which match the current limit) *
+#       %n      number of new messages in the mailbox *
+#       %o      number of old unread messages
+#       %p      number of postponed messages *
+#       %P      percentage of the way through the index
+#       %r      modified/read-only/won't-write/attach-message indicator, according to $status_chars
+#       %s      current sorting mode ($sort)
+#       %S      current aux sorting method ($sort_aux)
+#       %t      number of tagged messages *
+#       %u      number of unread messages *
+#       %v      Mutt version string
+#       %V      currently active limit pattern, if any *
+#       %>X     right justify the rest of the string and pad with "X"
+#       %|X     pad to the end of the line with "X"
+#       * = can be optionally printed if nonzero
+
+#  Some of the above sequences can be used to optionally print a string
+#  if their value is nonzero.  For example, you may only want to see the
+#  number of flagged messages if such messages exist, since zero is not
+#  particularly meaningful.  To optionally print a string based upon one
+#  of the above sequences, the following construct is used
+#               %?<sequence_char>?<optional_string>?
+#  where sequence_char is a character from the table above, and
+#  optional_string is the string you would like printed if status_char is
+#  nonzero.  optional_string may contain other sequence as well as normal
+#  text, but you may not nest optional strings.
+#  Here is an example illustrating how to optionally print the number of
+#  new messages in a mailbox:
+#               %?n?%n new messages.?
+#  Additionally you can switch between two strings, the first one, if a
+#  value is zero, the second one, if the value is nonzero, by using the
+#  following construct:
+#               %?<sequence_char>?<if_string>&<else_string>?
+
+## Examples:
+#set status_format="%v: %f (%s) [%?M/?%m]  [flags:%?t tagged,?%n new%?p post?]"
+#set status_format="%v: %f (%s) [%?M/?%m]  [flags:%?t tagged,?%n new]"
+#set status_format="%v: %f (%s) [%M/%m]\n[flags:n=%n,D=%d,t=%t,!=%F]"
+#set status_format="%v: %f (%s) [%M/%m]  [flags:n=%n,t=%t]"
+#set status_format="%v:    (%s) [%M/%m]  [flags:n=%n,t=%t]"
+#set status_format="%v:    (%s) [%M/%m]  [flags:n:%n,t:%t,p:%p]"
+#set status_format="%v:    (%s) [%M/%m]  [flags:%?02n new?,t:%t]"
+#set status_format="%v: %f (%s) [%M/%m]  [flags:%n new,%?t tagged?]"
+#set status_format="%v: %f (%s) [%M/%m;%l bytes]  [N=%n,*=%t,post=%p]"
+#set status_format="%v: %f (%s) [%M/%m] [N=%n,*=%t,post=%p,new=%b]"
+#set status_format="%v: %f (%s) [%M/%m] [New=%n,*=%t,fldr=%b]"
+#set status_format="-%r-%v--[%?M?%M/?%m msgs%?n?, %n new?%?d?, %d del?%?F?, %F flag?%?t?, %t tag?%?p?, %p postp?%?b?, %b inc?%?l?, %l?]--(%f)--%s-%>-%P-"
+#set status_format="Mailbox: %f (%s) %> [%M/%m] [New=%n FldrNew=%b %t* %lb]"
+set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b? %?l? %l?]---(%s/%S)-%>-(%P)---"
+
+#set status_format = "───[ Folder: %f ]─%V──[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?─── %l|%L"
