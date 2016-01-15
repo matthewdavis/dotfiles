@@ -1,3 +1,4 @@
+# -*- muttrc -*-
 # SSL hardening
 # from https://gist.github.com/bnagy/8914f712f689cc01c267
 set ssl_force_tls=yes

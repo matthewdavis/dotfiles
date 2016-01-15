@@ -1,3 +1,4 @@
+# -*- muttrc -*-
 # set up trash
 # sync before & after so the flags get set right and gmail will purge after a message is marked as deleted
 folder-hook .                                  'macro pager d "<sync-mailbox><delete-message><sync-mailbox>"'
