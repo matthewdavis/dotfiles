@@ -6,6 +6,7 @@
 ## "hdr_format", "pager_format", and "status_format".
 ## ======================================================================
 
+#/set date_format="%y-%m-%d %T"
 
 # index_format - format of all mails shown in the index display
 #  %a      address of the author
@@ -49,14 +50,31 @@
 #  %>X     right justify the rest of the string and pad with character "X"
 #  %|X     pad to the end of the line with character "X"
 
-set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s"
-
+#set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s"
+#set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+#set index_format="%4C %Z %d %-15.15L (%-5c) %s"
+#set index_format="%4C %Z %-22.22a %d %?M?(#%03M)&(%4c)? %s"
+#set index_format="%4C %Z %-22a %d (%4l) %s"
+#set index_format="%Z %[%d %b %H:%M]  %-60.60s  %35.35F"
+set index_format="%Z %[%a %d %b %H:%M] | %-22.22L %?M?(#%03M)&(%4c)? %s"
 
 
 # pager_format - format of summary on current mail in the pager
 # Examples:
 #set pager_format="%S %C/%T: %-20.20n   %s"  # default
-#set  pager_format="%S [%C] %n (%l) %s"      # Tom's favourite
+#set pager_format="%S [%C] %n (%l) %s"      # Tom's favourite
+#set pager_format="-%S- [%C/%m] %n (%c) %s"
+#set pager_format="%S [%C/%m] %l %n: %s"
+#set pager_format="%S [%C] %n (%l) %s %> [%P]" 
+#set pager_format="-%S- %C/%m %a %s %cbytes score:%N"
+#set pager_format="-%S- %C/%m: %-20.20n(%a)   %s[%c bytes] [score :%N]"
+#set pager_format="%S [%C/%T] %n (%l) %s"
+#set pager_format=">%b< %S [%C/%m] %n (%l) %s %> [%P]"
+#set pager_format="%S [%C/%T] %n (%l) %s"
+#set pager_format="%> [%P]"
+set pager_format="%C/%m [%[%H:%M]] [%P] %-17.17n   %s"
+#set pager_format=" %C - %[%H:%M] %.20v, %s%* %?H? [%H] ?"
+#set pager_format="[%Z] %A-%C/%m %.34f%>%[%d.%b %y, %H:%M]"
 
 
 ## Default: "%N %F %2l %-8.8u %-8.8g %8s %d %f"
@@ -74,6 +92,7 @@ set index_format=" %[!%d-%b-%y] %Z %-15.15L %?M?(#%03M)&(%-4c)? %s"
 #       %>X     right justify the rest of the string and pad with character "X"
 #       %|X     pad to the end of the line with character "X"
 set folder_format="%F %2l %-8.8u %-8.8g %d %8s %N %f"
+
 
 
 # status_format
@@ -136,7 +155,7 @@ set folder_format="%F %2l %-8.8u %-8.8g %d %8s %N %f"
 #set status_format="%v: %f (%s) [%M/%m] [N=%n,*=%t,post=%p,new=%b]"
 #set status_format="%v: %f (%s) [%M/%m] [New=%n,*=%t,fldr=%b]"
 #set status_format="-%r-%v--[%?M?%M/?%m msgs%?n?, %n new?%?d?, %d del?%?F?, %F flag?%?t?, %t tag?%?p?, %p postp?%?b?, %b inc?%?l?, %l?]--(%f)--%s-%>-%P-"
-#set status_format="Mailbox: %f (%s) %> [%M/%m] [New=%n FldrNew=%b %t* %lb]"
-set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b? %?l? %l?]---(%s/%S)-%>-(%P)---"
+#set status_format="Mailbox: %f (%s) %> [%M/%m] [New=%n %t* %lb]"
+#set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b? %?l? %l?]---(%s/%S)-%>-(%P)---"
 
-#set status_format = "───[ Folder: %f ]─%V──[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?─── %l|%L"
+set status_format = "───[ Folder: %f ]─%V──[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?─── %l|%L"
