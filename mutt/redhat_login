@@ -28,3 +28,6 @@ set imap_pass = $my_pass
 #unset imap_pass
 
 alternates = $my_alternates
+
+# Not needed for GMail
+unset record
