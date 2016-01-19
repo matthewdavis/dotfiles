@@ -62,8 +62,8 @@ unset hidden_host                         # when set, skip the host name part of
 unset ignore_list_reply_to                # ignore Reply-To pointing back to mailinglist
 set implicit_autoview                     # use autoview, if a "copiousoutput" is in mailcap.
 set mailcap_sanitize                      # remove ugly chars from mailcap % expands.
-unset mark_old                              # mark new articles as old, when leaving mbox
-set markers                               # put a '+' at the beginning of wrapped lines.  
+unset mark_old                            # mark new articles as old, when leaving mbox
+unset markers                             # put a '+' at the beginning of wrapped lines.  
 set menu_scroll                           # scroll on last line of menu (set) or do a nextpage?
 unset meta_key                            # Don't interpret Alt-x as ESC x
 unset metoo                               # should we keep ourselves in group replies?
@@ -71,7 +71,7 @@ set mh_purge                              # remove messages marked as deleted fr
 unset mime_forward                        # Don't forward message as MIME attachments.
 unset mime_forward_decode                 # decode messages when forwarding with MIME
 set pager_stop                            # Don't jump to next message at end of message.
-unset pipe_decode                           # Weed headers and PGP-decode message before piping
+unset pipe_decode                         # Weed headers and PGP-decode message before piping
 unset pipe_split                          # split tagged messages (or don't) when using "|"
 unset prompt_after                        # display prompt after exit from pager
 unset read_only                           # folders not read only
