@@ -8,6 +8,8 @@ nmap :WQ :wq
 nmap :Wq! :wq!
 nmap :WQ! :wq!
 
+map q gq}
+
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
