@@ -10,6 +10,7 @@ macro index "y"      "<sync-mailbox><change-folder>?<toggle-mailboxes>"   # "-y"
 macro index "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
 macro index "<esc>i" "<change-folder>=INBOX<enter>"                       # Go Home
 macro index "\eh"    "<pipe-message>~/.mutt/mailhops<enter>"              # View the path of the mail.
+#macro index "\ei"    "<pipe-message>~/.mutt/mutt_rh-info<enter>"
 macro index "\ev"    "<pipe-message>less<enter>"                          # View the message in less.
 
 # Macros for use in the pager.
