@@ -31,3 +31,5 @@ alternates = $my_alternates
 
 # Not needed for GMail
 unset record
+
+# vim: syntax=muttrc

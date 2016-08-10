@@ -78,3 +78,4 @@ score '~s "Microsoft|Windows|windows"'  -2      # Just switch allready!
 score '~s "OT|Off Topic|off topic"'     -2      # DOH!
 score '~s "not working"'                -2      # What a lame request for help
 
+# vim: syntax=muttrc

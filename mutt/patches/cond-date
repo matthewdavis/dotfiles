@@ -1,3 +1,5 @@
 # http://www.neomutt.org/feature/cond-date/                                                                                                                   
 # --------------------------------------------------------------------------
 set index_format="%Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> | %-15.15L %?M?(#%03M)&(%4c)? %s"
+
+# vim: syntax=muttrc

@@ -7,4 +7,4 @@
 
 set skip_quoted_offset = 3     # Show three quoted lines before the reply
  
-
+# vim: syntax=muttrc

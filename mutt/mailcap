@@ -26,3 +26,5 @@ text/*; vim %s
 application/octet-stream; $HOME/.mutt/mutt_bgrun xdg-open %s
 
 multipart/alternative; less %s
+
+# vim: syntax=muttrc

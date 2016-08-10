@@ -44,3 +44,5 @@ color index yellow default ~P
 color attachment white default
 # X-label
 color header brightwhite default '^X-Label:'
+
+# vim: syntax=muttrc

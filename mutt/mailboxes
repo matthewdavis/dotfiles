@@ -26,3 +26,5 @@ mailboxes =y-low/friday-list
 mailboxes =y-low/puppet
 mailboxes =y-low/atomic
 mailboxes =y-low/shadowpeople
+
+# vim: syntax=muttrc

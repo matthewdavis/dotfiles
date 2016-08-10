@@ -62,3 +62,5 @@ bind pager   "i"      exit
 bind pager   "\Cxo"   change-folder
 bind pager   "\Cxb"   change-folder
 bind pager   "\Cx\Cf" change-folder
+
+# vim: syntax=muttrc

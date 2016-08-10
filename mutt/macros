@@ -36,3 +36,5 @@ macro pager "\ev"    "<pipe-message>less<enter>"                          # View
 macro index,pager <F1> "<shell-escape>less /usr/share/doc/mutt/manual.txt<enter>" "Show Mutt documentation"
 macro index,pager <F2> ":toggle help<enter>:set ?help<enter>"  "toggle help status line"
 macro index,pager <F5> ":source ~/.mutt/muttrc\n"              "Reload the muttrc"
+
+# vim: syntax=muttrc

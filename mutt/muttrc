@@ -194,3 +194,5 @@ set write_inc=100
 
 # Last, but not least, get mutt to display its version on startup.
 push <show-version>
+
+# vim: syntax=muttrc

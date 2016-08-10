@@ -14,5 +14,5 @@ color index_date green default                                  # Date field
 color index_label default brightgreen                           # Message label, %y %Y
 color index_number red default                                  # Message number, %C
 color index_size cyan default                                   # Message size, %c %l
-# vim: syntax=muttrc
 
+# vim: syntax=muttrc
