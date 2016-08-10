@@ -1,0 +1,10 @@
+# http://www.neomutt.org/feature/skip-quoted/
+
+# The 'S' (skip-quoted) command scrolls the pager past the quoted text (usually
+# indented with '> '.  Setting 'skip_quoted_offset' leaves some lines of quoted
+# text on screen for context.
+
+
+set skip_quoted_offset = 3     # Show three quoted lines before the reply
+ 
+

@@ -19,13 +19,12 @@ source ~/.mutt/colours                    # Define colours.
 source ~/.mutt/ssl_hardening              # Define ssl hardening features
 source ~/.mutt/formats                    # Define index/status/pager formats
 #source ~/.mutt/scoring                   # Define scores
-source ~/.mutt/non-standard               # Support for mutt patches.
 
 # patch source files
 source ~/.mutt/patches/sidebar
 source ~/.mutt/patches/index-color
 source ~/.mutt/patches/cond-date
-
+source ~/.mutt/patches/skip-quoted
 # organization idea from Tom's muttrc - http://pablotron.org/files/muttrc
 
 # Boolean Variables:
