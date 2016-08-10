@@ -1,0 +1,18 @@
+# http://www.neomutt.org/feature/index-color/
+
+color index white black '.*'                                    # Entire index line
+color index_author color226 default '.*'                        # Author name, %A %a %F %L %n
+                                                                # Give the author column a dark grey background
+#color index_author brightyellow color234 '~fRay Charles'       # Highlight a particular from (~f)
+color index_flags default red '~F'                              # Message flags, %S %Z
+                                                                # Highlight the flags for flagged (~F) emails
+#color index_subject brightcyan default '~s\(closes #[0-9]+\)'  # Subject, %s
+                                                                # Look for a particular subject (~s)
+color index_subject red default '~s\(#[0-9]+\)'                 # Subject, %s
+#color index_collapsed default yellow                           # Number of messages in a collapsed thread, %M
+color index_date green default                                  # Date field
+color index_label default brightgreen                           # Message label, %y %Y
+color index_number red default                                  # Message number, %C
+color index_size cyan default                                   # Message size, %c %l
+# vim: syntax=muttrc
+

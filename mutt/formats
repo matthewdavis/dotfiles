@@ -56,7 +56,10 @@
 #set index_format="%4C %Z %-22.22a %d %?M?(#%03M)&(%4c)? %s"
 #set index_format="%4C %Z %-22a %d (%4l) %s"
 #set index_format="%Z %[%d %b %H:%M]  %-60.60s  %35.35F"
-set index_format="%Z %[%a %d %b %H:%M] | %-22.22L %?M?(#%03M)&(%4c)? %s"
+#set index_format="%Z %[%a %d %b %H:%M] | %-22.22L %?M?(#%03M)&(%4c)? %s"
+# now in patches/index_format due it using the Conditional Date patch
+set index_format="%Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> | %-15.15L %?M?(#%03M)&(%4c)? %s"
+
 
 
 # pager_format - format of summary on current mail in the pager

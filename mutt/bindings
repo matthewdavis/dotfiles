@@ -13,12 +13,12 @@ bind generic <end>   last-entry
 bind generic <left>  previous-entry
 bind generic <right> next-entry
 
-# Specific key bindings.
+# index
 bind index   "{"      previous-thread
 bind index   "}"      next-thread
 bind index   "["      half-up
 bind index   "]"      half-down
-bind index   "B"       bounce-message
+bind index   "B"      bounce-message
 bind index   "x"      noop
 bind index   "\ex"    exit
 bind index   "\Cxo"   change-folder
@@ -26,11 +26,21 @@ bind index   "\Cxb"   change-folder
 bind index   "\Cx\Cf" change-folder
 bind index   "-"      collapse-thread
 bind index   "_"      collapse-all
+
+# editor
 bind editor  "\C?"    backspace
+
+# alias
 bind alias   " "      tag-entry
 bind alias   "\r"     select-entry
+
+# attach
 bind attach  "v"      select-entry
+
+# compose
 bind compose "v"      view-attach
+
+# pager
 bind pager   "\e<"    top
 bind pager   "\e>"    bottom
 bind pager   "<"      top
@@ -48,6 +58,7 @@ bind pager   <right>  next-undeleted
 bind pager   "t"      display-toggle-weed
 bind pager   "x"      noop
 bind pager   "\ex"    exit
+bind pager   "i"      exit
 bind pager   "\Cxo"   change-folder
 bind pager   "\Cxb"   change-folder
 bind pager   "\Cx\Cf" change-folder

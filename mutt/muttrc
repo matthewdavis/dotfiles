@@ -21,6 +21,11 @@ source ~/.mutt/formats                    # Define index/status/pager formats
 #source ~/.mutt/scoring                   # Define scores
 source ~/.mutt/non-standard               # Support for mutt patches.
 
+# patch source files
+source ~/.mutt/patches/sidebar
+source ~/.mutt/patches/index-color
+source ~/.mutt/patches/cond-date
+
 # organization idea from Tom's muttrc - http://pablotron.org/files/muttrc
 
 # Boolean Variables:
@@ -154,7 +159,7 @@ set message_cachedir =~/.mutt/cache/bodies
 # Display 3 lines of context in pager.
 set pager_context=3
 # number of lines of a mini-index
-set pager_index_lines=6
+set pager_index_lines=7
 # Where postponed messages live.
 set postponed="+[Gmail]/Drafts"
 # Print via a2ps
