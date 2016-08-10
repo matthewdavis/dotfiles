@@ -6,7 +6,6 @@
 source ~/.mutt/redhat_login               # login creds & server info
 source ~/.mutt/auto_views                 # Define auto_views.
 source ~/.mutt/aliases                    # Load in my aliases.
-source ~/.mutt/subscriptions              # Define the list of subscribed mailing lists.
 source ~/.mutt/mailboxes                  # Define the list of folders that receive mail.
 source ~/.mutt/headers                    # Configure header display.
 source ~/.mutt/folder-hooks               # Define folder-hooks.
