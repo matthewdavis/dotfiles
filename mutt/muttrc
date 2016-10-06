@@ -24,6 +24,8 @@ source ~/.mutt/patches/sidebar
 source ~/.mutt/patches/index-color
 source ~/.mutt/patches/cond-date
 source ~/.mutt/patches/skip-quoted
+source ~/.mutt/patches/progress-bar
+source ~/.mutt/patches/compose-to-sender
 # organization idea from Tom's muttrc - http://pablotron.org/files/muttrc
 
 # Boolean Variables:

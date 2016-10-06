@@ -1,0 +1,7 @@
+# https://www.neomutt.org/feature/compose-to-sender/
+
+# Compose a new email (not a reply) to the sender
+bind index,pager @ compose-to-sender
+
+# vim: syntax=muttrc
+
