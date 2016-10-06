@@ -5,14 +5,14 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-source ~/.todo/todo_completion
-export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo.sh'
+#source ~/.todo/todo_completion
+#export TODOTXT_DEFAULT_ACTION=ls
+#alias t='todo.sh'
 
 # User specific aliases and functions
 
 
-export TERM=xterm-256color
+export TERM=screen-256color
 export GREP_COLOR="1;33"
 alias grep='grep --color=auto'
 alias less='less -FiX'
@@ -27,7 +27,7 @@ alias centos='ssh root@172.31.1.11'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
-alias mutt='TERM=screen-256color mutt'
+#alias mutt='TERM=screen-256color mutt'
 
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
