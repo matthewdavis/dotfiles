@@ -5,6 +5,7 @@ mailboxes =lists/announce
 mailboxes =lists/se-list
 mailboxes =lists/salab
 mailboxes =lists/se-east
+mailboxes =lists/managers
 mailboxes =lists/android
 mailboxes =lists/rdu-list
 mailboxes =lists/memo-list
