@@ -12,6 +12,7 @@ macro index "<esc>i" "<change-folder>=INBOX<enter>"                       # Go H
 macro index "\eh"    "<pipe-message>~/.mutt/mailhops<enter>"              # View the path of the mail.
 #macro index "\ei"    "<pipe-message>~/.mutt/mutt_rh-info<enter>"
 macro index "\ev"    "<pipe-message>less<enter>"                          # View the message in less.
+macro index A        "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" # mark all new as read
 
 # Macros for use in the pager.
 macro pager "w"      "<enter-command>set invsmart_wrap invmarkers<enter>" # Toggle wrap stuff
