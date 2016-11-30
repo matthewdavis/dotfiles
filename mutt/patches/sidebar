@@ -19,7 +19,7 @@ set sidebar_divider_char = '|'                     # The character to use as the
                                                    # panels.
                                                    # Note: Only the first character of this string is used.
 set mail_check_stats
-#set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'   # Display the Sidebar mailboxes using this format string.
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'   # Display the Sidebar mailboxes using this format string.
 set sidebar_sort_method = 'unsorted'               # Sort the mailboxes in the Sidebar using this method:
                                                    #       count    - total number of messages
                                                    #       flagged  - number of flagged messages
