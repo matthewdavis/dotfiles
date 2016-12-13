@@ -12,13 +12,13 @@ application/vnd.ms-excel; $HOME/.mutt/mutt_bgrun libreoffice %s
 application/x-msexcel; $HOME/.mutt/mutt_bgrun libreoffice %s
 
 # Images
-image/*; $HOME/.mutt/mutt_bgrun ristretto %s
+image/*; $HOME/.mutt/mutt_bgrun xdg-open %s
 
 # PDFs
-application/pdf; $HOME/.mutt/mutt_bgrun qpdfview %s
+application/pdf; $HOME/.mutt/mutt_bgrun xdg-open %s
 
 # HTML
-text/html; $HOME/.mutt/mutt_bgrun firefox %s
+text/html; $HOME/.mutt/mutt_bgrun xdg-open %s
 
 text/*; vim %s
 
