@@ -12,7 +12,7 @@ fi
 # User specific aliases and functions
 
 
-export TERM=screen-256color
+export TERM=xterm-256color
 export GREP_COLOR="1;33"
 alias grep='grep --color=auto'
 alias less='less -FiX'
