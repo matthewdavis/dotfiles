@@ -17,13 +17,15 @@ export GREP_COLOR="1;33"
 alias grep='grep --color=auto'
 alias less='less -FiX'
 alias head='head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
-alias fix_elluminate='javaws -Xclearcache'
 
 #alias irc='ssh -t shell.eng.rdu.redhat.com screen -r'
 #alias irc='ssh -t log.rdu.salab.redhat.com screen -r'
 #alias irc='ssh log.rdu.salab.redhat.com -p 19122 -l matt'
 alias irc='ssh -t dogpound.usersys.redhat.com tmux a'
 alias centos='ssh root@172.31.1.11'
+alias dp='ssh -L 6789:localhost:6789 -L 8081:localhost:8081 -L 5050:localhost:5050 -L 32400:localhost:32400 dogpound.me -l mdavis -A'
+alias edge='ssh dummy@172.31.1.1'
+
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
