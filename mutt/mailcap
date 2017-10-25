@@ -12,7 +12,7 @@ application/vnd.ms-excel; $HOME/.mutt/mutt_bgrun libreoffice %s
 application/x-msexcel; $HOME/.mutt/mutt_bgrun libreoffice %s
 
 # Images
-image/*; $HOME/.mutt/mutt_bgrun xdg-open %s
+image/*; mkdir -p /tmp/mutt \; cp %s /tmp/mutt \; xdg-open /tmp/mutt/$(basename %s) &
 
 # PDFs
 application/pdf; $HOME/.mutt/mutt_bgrun xdg-open %s
