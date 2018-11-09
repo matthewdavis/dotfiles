@@ -12,4 +12,5 @@ PATH=$PATH:$HOME/bin:/home/mdavis/keepass/usr/local/bin:$HOME/.todo:$HOME/.local
 export PATH
 export HISTFILESIZE=100000
 export HISTSIZE=100000
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignoreboth
+export HISTIGNORE=smplayer*
