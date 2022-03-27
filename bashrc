@@ -81,3 +81,17 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
+
+
+# arch specific alias'
+# requires rate-mirrors-bin pacman-contrib pacutils
+# yay -S rate-mirros-bin pacman-contrib
+
+alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
+alias ua-update-all='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && ua-drop-caches \
+      && yay -Syyu --noconfirm'
