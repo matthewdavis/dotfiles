@@ -46,12 +46,13 @@ ALERT="${BWhite}${On_Red}" # Bold White on red background
 # User specific aliases and functions
 
 
+alias ip='ip -c'
 alias ..='cd ..'
 alias grep='grep --color=auto'
 alias less='less -FiX'
 alias head='head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
-alias ls='ls -CF --color=auto'
-alias ll='ls -lisa --color=auto'
+alias ls='lsd -F --color=auto --group-dirs first'
+alias ll='lsd -lia --color=auto --git --group-dirs first'
 alias server='ssh root@172.31.1.11'
 alias dp='ssh -L 6789:localhost:6789 -L 8081:localhost:8081 -L 5050:localhost:5050 -L 32400:localhost:32400 dogpound.me -l mdavis -A'
 alias mkdir='mkdir -pv'
@@ -61,7 +62,7 @@ alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias wget='wget -c'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
-
+alias cat=bat
 
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
@@ -95,3 +96,4 @@ alias ua-update-all='export TMPFILE="$(mktemp)"; \
       && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
       && ua-drop-caches \
       && yay -Syyu --noconfirm'
+
