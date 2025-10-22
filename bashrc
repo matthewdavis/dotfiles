@@ -8,6 +8,20 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# History settings
+HISTSIZE=50000
+HISTFILESIZE=100000
+HISTCONTROL=ignoreboth:erasedups  # ignore duplicates and commands starting with space
+HISTIGNORE='ls:ll:cd:pwd:bg:fg:history'
+shopt -s histappend               # append to history, don't overwrite
+shopt -s cmdhist                  # save multi-line commands as one entry
+
+# Useful shell options
+shopt -s checkwinsize             # update LINES and COLUMNS after each command
+shopt -s cdspell                  # autocorrect minor spelling errors in cd
+shopt -s dirspell                 # autocorrect directory names during completion
+shopt -s autocd                   # cd by just typing directory name
+
 # Make colorcoding available for everyone
 
 Black='\[\e[0;30m\]'    # Black
@@ -63,15 +77,44 @@ alias wget='wget -c'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias cat=bat
+alias rm='rm -I'                  # prompt if deleting more than 3 files
+alias mv='mv -i'                  # interactive mode (prompt before overwrite)
+alias cp='cp -i'                  # interactive mode
 
 qr() {
     echo "$1" | /usr/bin/qrencode -s 10 -o - | /usr/bin/display -
 }
 
-#export PROMPT_COMMAND='PS1="\[\033[0;33m\]\!\[\033[1;30m\]|\[\033[1;34m\]\$(date +%H:%M)\[\033[1;30m\]|\`if [[ $? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`\u.\h\[\033[1;30m\]:\[\033[1;37m\]\`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\` \`if [[ "`id -u`" = "0" ]]; then echo "\\[\\033[31m\\]"; else echo "\\[\\033[32m\\]"; fi\`\\$\[\033[0;0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
-#export PS1="\[\033[01;37m\]\$? \$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi) $(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$\[\033[00m\] "
+# Extract any archive
+extract() {
+    if [ -f "$1" ]; then
+        case "$1" in
+            *.tar.bz2) tar xjf "$1" ;;
+            *.tar.gz)  tar xzf "$1" ;;
+            *.bz2)     bunzip2 "$1" ;;
+            *.gz)      gunzip "$1" ;;
+            *.tar)     tar xf "$1" ;;
+            *.zip)     unzip "$1" ;;
+            *.7z)      7z x "$1" ;;
+            *) echo "'$1' cannot be extracted" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# Quick directory creation and navigation
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Git-aware prompt
+parse_git_branch() {
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 # Set prompt
-PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
+PS1="${Yellow}\u@\h${NC}: ${Blue}\w ${Purple}\$(parse_git_branch)${NC}\\$ "
 
 export EDITOR="vim"
 
@@ -81,6 +124,14 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+
+# Clean up orphaned ssh-agent processes
+clean-ssh-agents() {
+    pkill -u "$USER" ssh-agent
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+    source "$XDG_RUNTIME_DIR/ssh-agent.env"
+    echo "SSH agents cleaned and restarted"
+}
 
 
 
