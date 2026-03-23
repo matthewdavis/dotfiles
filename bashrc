@@ -13,6 +13,7 @@ HISTSIZE=50000
 HISTFILESIZE=100000
 HISTCONTROL=ignoreboth:erasedups  # ignore duplicates and commands starting with space
 HISTIGNORE='ls:ll:cd:pwd:bg:fg:history'
+HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S "
 shopt -s histappend               # append to history, don't overwrite
 shopt -s cmdhist                  # save multi-line commands as one entry
 
